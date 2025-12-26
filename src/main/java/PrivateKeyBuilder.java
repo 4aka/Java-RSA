@@ -18,10 +18,10 @@ public class PrivateKeyBuilder {
     private int mod() { return P * Q; }
     private int euler() { return (P - 1) * (Q - 1); }
 
-    public Map<String, Integer> getPrivateKey() {
-        Map<String, Integer> privateKey = new HashMap<>();
-        privateKey.put("Mod", mod());
-        privateKey.put("D", getD());
+    public Map<common, Integer> getPrivateKey() {
+        Map<common, Integer> privateKey = new HashMap<>();
+        privateKey.put(common.EXP, mod());
+        privateKey.put(common.D, getD());
         return privateKey;
     }
 

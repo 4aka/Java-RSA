@@ -14,10 +14,10 @@ public class PublicKeyBuilder {
         this.Q = q;
     }
 
-    public Map<String, Integer> getPublicKey() {
-        Map<String, Integer> publicKey = new HashMap<>();
-        publicKey.put("Mod", mod());
-        publicKey.put("Exp", getOpenExp());
+    public Map<common, Integer> getPublicKey() {
+        Map<common, Integer> publicKey = new HashMap<>();
+        publicKey.put(common.MOD, mod());
+        publicKey.put(common.EXP, getOpenExp());
         return publicKey;
     }
 
@@ -26,8 +26,7 @@ public class PublicKeyBuilder {
 
     private int getOpenExp() {
         List<Integer> primes = primeNumbers.getPrimesBetween(2, euler());
-        for (int exp: primes)
-            if (IsOpenExpMeetTheRequirements(exp)) return exp;
+        for (int exp: primes) if (IsOpenExpMeetTheRequirements(exp)) return exp;
         return -1;
     }
 
