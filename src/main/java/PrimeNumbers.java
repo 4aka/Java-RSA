@@ -30,4 +30,10 @@ public class PrimeNumbers {
     public Boolean isMutuallySimple(int prime, int euler) {
         return euler % prime != 0;
     }
+
+    public Long raiseToDegree(int digit, int grade) {
+        long result = digit;
+        for (int i = 1; i < grade; i++) result *= digit;
+        return result;
+    }
 }
